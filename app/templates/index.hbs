@@ -1,19 +1,21 @@
-<h1>
-  {{#if length}}
-    {{length}} {{pluralize-word length 'box'}}
-  {{else}}
-    No boxes
-  {{/if}}
-  on this page
-  {{~#if deleted~}}
-    , {{deleted}} deleted
-  {{/if}}
-</h1>
+<div id="container1" {{bind-attr class='hasHovered'}}>
+  <h1>
+    {{#if length}}
+      {{length}} {{pluralize-word length 'box'}}
+    {{else}}
+      No boxes
+    {{/if}}
+    on this page
+    {{~#if deleted~}}
+      , {{deleted}} deleted
+    {{/if}}
+  </h1>
 
-{{#if length}}
-  {{#dark-box id="container2" length=length}}
-    {{#each}}
-      {{~nice-box item=this addAction='add' removeAction='remove'~}}
-    {{/each}}
-  {{/dark-box}}
-{{/if}}
+  {{#if length}}
+    {{#dark-box id="container2" length=length}}
+      {{#each}}
+        {{~nice-box item=this addAction='add' removeAction='remove'~}}
+      {{/each}}
+    {{/dark-box}}
+  {{/if}}
+</div>
