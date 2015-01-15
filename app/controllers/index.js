@@ -16,6 +16,12 @@ export default Ember.ArrayController.extend({
     localStorage.setItem('model', data);
   }.observes('@each'),
 
+  rememberDeleted: function(obj, start, removeCount){
+    if (removeCount > 0) {
+      this.incrementProperty('deleted', removeCount);
+    }
+  }.on('@array:change'),
+
   actions: {
     add: function (item) {
       var nextIndex = item.get('index') + 1,
@@ -24,7 +30,6 @@ export default Ember.ArrayController.extend({
       this.insertAt(nextIndex, nextId);
     },
     remove: function (item) {
-      this.incrementProperty('deleted');
       this.removeObject(item);
     }
   }

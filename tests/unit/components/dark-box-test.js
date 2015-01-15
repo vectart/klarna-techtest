@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import {
   moduleForComponent,
   test
@@ -18,4 +19,19 @@ test('it renders', function() {
   // appends the component to the page
   this.append();
   equal(component._state, 'inDOM');
+});
+
+test('it has correct gray color', function() {
+  expect(2);
+
+  // creates the component instance
+  var component = this.subject();
+
+  Ember.run.begin();
+  component.set('length', 1);
+  equal(component.get('style'), 'background-color: rgb(245, 245, 245)');
+
+  component.set('length', 50);
+  equal(component.get('style'), 'background-color: rgb(55, 55, 55)');
+  Ember.run.end();
 });

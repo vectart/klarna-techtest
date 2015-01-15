@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export function pluralizeWord(num, str) {
-  if (num > 1) {
+  if (str && num > 1) {
     return Ember.String.pluralize(str);
   }
 

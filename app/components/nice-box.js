@@ -5,7 +5,10 @@ export default Ember.Component.extend({
 
   hasHover: function(){
     var item = this.get('item');
-    this.$('div').hover(item.toggleProperty.bind(item, 'isHovered'));
+
+    if (item) {
+      this.$('div').hover(item.toggleProperty.bind(item, 'isHovered'));
+    }
   }.on('didInsertElement'),
 
   actions: {
