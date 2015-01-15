@@ -1,0 +1,10 @@
+{{#with item}}
+  <div {{action 'add'}}>
+    <h3>{{model}}</h3>
+    <p>
+      <span class="prev">{{prev.model}}</span>
+      <span class="next">{{next.model}}</span>
+    </p>
+    <button {{action 'remove' bubbles=false}}>×</button>
+  </div>
+{{/with}}
