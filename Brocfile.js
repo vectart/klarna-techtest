@@ -8,6 +8,8 @@ var app = new EmberApp({
   }
 });
 
+app.import('bower_components/selectivizr/selectivizr.js');
+
 app.import('bower_components/normalize.css/normalize.css');
 
 module.exports = app.toTree();
